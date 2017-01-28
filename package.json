@@ -1,0 +1,24 @@
+{
+  "name": "contract-deployer",
+  "version": "1.0.0",
+  "description": "Solidity smart contract deployer",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BancoSabadell/contract-deployer.git"
+  },
+  "keywords": [
+    "solidity",
+    "contract",
+    "deployer"
+  ],
+  "author": "Jose Luis Piedrahita <jlpiedrahita@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BancoSabadell/contract-deployer/issues"
+  },
+  "homepage": "https://github.com/BancoSabadell/contract-deployer#readme"
+}
