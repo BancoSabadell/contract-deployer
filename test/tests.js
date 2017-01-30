@@ -31,22 +31,22 @@ describe('Deployer', function () {
 
     it('should deploy contracts correctly', function () {
         const deployer = new Deployer(web3, {sources: testContracts}, 0);
-        return deployer.deploy('Foo', [], { from: account1, gas: 400000 });
+        return deployer.deploy('Foo', [], { from: account1 });
     }).timeout(4000);
 
     it('should fail if contract name is not valid', function () {
         const deployer = new Deployer(web3, {sources: testContracts}, 0);
-        return deployer.deploy('Faa', [], { from: account1, gas: 400000 }).should.be.rejected;
+        return deployer.deploy('Faa', [], { from: account1 }).should.be.rejected;
     });
 
     it('should fail if contract code not valid', function () {
         const deployer = new Deployer(web3, 'pragma solidity ^0.4.8;\ncontracts A {}', 0);
-        return deployer.deploy('A', [], { from: account1, gas: 400000 }).should.be.rejected;
+        return deployer.deploy('A', [], { from: account1 }).should.be.rejected;
     });
 
     it('should promisify contract methods', function () {
         const deployer = new Deployer(web3, {sources: testContracts}, 0);
-        return deployer.deploy('Foo', [], { from: account1, gas: 400000 })
+        return deployer.deploy('Foo', [], { from: account1 })
             .then(foo => foo.fooAsync({ from: account1, gas: 400000 }));
     });
 
