@@ -10,7 +10,7 @@ class Deployer {
         this.enableOptimizer = enableOptimizer;
     }
 
-    deploy(contractName, txOptions) {
+    deploy(contractName, contractConstructorArguments, txOptions) {
         return new Promise((resolve, reject) => {
 
             if (!this.compilation) {
@@ -31,7 +31,7 @@ class Deployer {
             const contractFactory = this.compilation.contracts[contractName];
             const contract = this.web3.eth.contract(JSON.parse(contractFactory.interface));
 
-            contract.new(Object.assign({ data: contractFactory.bytecode }, txOptions), (error, deployedContract) => {
+            contract.new(...contractConstructorArguments, Object.assign({ data: contractFactory.bytecode }, txOptions), (error, deployedContract) => {
                 if (error) {
                     reject(error);
                 } else {
