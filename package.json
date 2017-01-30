@@ -20,5 +20,15 @@
   "bugs": {
     "url": "https://github.com/BancoSabadell/contract-deployer/issues"
   },
-  "homepage": "https://github.com/BancoSabadell/contract-deployer#readme"
+  "homepage": "https://github.com/BancoSabadell/contract-deployer#readme",
+  "dependencies": {
+    "solc": "^0.4.8",
+    "web3": "^0.18.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "ethereumjs-testrpc": "^3.0.3",
+    "mocha": "^3.2.0"
+  }
 }
