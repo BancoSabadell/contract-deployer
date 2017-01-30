@@ -1,6 +1,7 @@
 'use strict';
 
 const solc = require('solc');
+const Promise = require('bluebird');
 
 class Deployer {
 
@@ -36,7 +37,7 @@ class Deployer {
                     reject(error);
                 } else {
                     if (deployedContract.address) {
-                        resolve(deployedContract);
+                        resolve(Promise.promisifyAll(deployedContract));
                     }
                 }
             });
