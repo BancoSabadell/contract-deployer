@@ -23,7 +23,7 @@
   "homepage": "https://github.com/BancoSabadell/contract-deployer#readme",
   "dependencies": {
     "bluebird": "^3.4.7",
-    "solc": "^0.4.8",
+    "solc": "0.4.6",
     "web3": "^0.18.2"
   },
   "devDependencies": {
