@@ -1,6 +1,6 @@
 {
   "name": "contract-deployer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Solidity smart contract deployer",
   "main": "src/index.js",
   "scripts": {
