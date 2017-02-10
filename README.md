@@ -1,4 +1,4 @@
-# contract-deployer
+# contract-deployer [![npm version](https://img.shields.io/npm/v/contract-deployer.svg?style=flat)](https://www.npmjs.com/package/contract-deployer) [![CircleCI](https://circleci.com/gh/BancoSabadell/contract-deployer.svg?style=svg)](https://circleci.com/gh/BancoSabadell/contract-deployer)
 
 Code is worth a thousand words, so lets see an example code of the tipical contract deployment:
 
