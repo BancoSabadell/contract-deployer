@@ -97,4 +97,4 @@ A new Deployer instance
     
 #### Returns:
 
-A Promise that will resolves as soon as the contract is mined or rejects is there are any problems.
+A JavaScript Promise that will resolves as soon as the contract is mined or rejects if there are any problems.
