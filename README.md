@@ -73,9 +73,11 @@ deployer.deploy('A', [])
 
 ### Create a new Deployer instance:
 
-    const deployer = new Deployer(web3, sources, enableOptimizer);
+```javascript
+const deployer = new Deployer(web3, sources, enableOptimizer);
+```
 
-##### Arguments:
+#### Parameters:
 
 * `web3`: a [web3](https://github.com/ethereum/web3.js) instance
 * `sources`: an string containing valid Solidity code or for multiple source files an object with the format `{ sources: {'contractA.sol': '...', 'contractB.sol': '...'} }`
@@ -83,18 +85,20 @@ deployer.deploy('A', [])
 
 #### Returns:
 
-A new Deployer instance
+A new Deployer instance.
 
 ### Deploy a smart contract from a Solidity source file or a string containing the code:
 
-    const promise = deployer.deploy(contractName, constructorArgs, txOptions);
+```javascript
+const promise = deployer.deploy(contractName, constructorArgs, txOptions);
+```
 
-#### Arguments:
+#### Parameters:
 
-* `contractName`: contract name of contract to deploy (should match contract name defined in the Solidity declaration: `contract *ContractName* {}`)
+* `contractName`: contract name of contract to deploy (should match contract name defined in the Solidity declaration: `contract ContractName {}`)
 * `constructorArgs`: an arrays containing the arguments for the contract constructor
 * `txOptions`: [options](https://github.com/ethereum/wiki/wiki/JavaScript-API#parameters-24) for the underlying contract creation transaction
     
 #### Returns:
 
-A JavaScript Promise that will resolves as soon as the contract is mined or rejects if there are any problems.
+A JavaScript Promise that will resolve as soon as the contract is mined or reject if errors are found.
