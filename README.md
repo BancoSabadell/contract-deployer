@@ -39,8 +39,8 @@ const Deployer = require('contract-deployer');
 
 const deployer = new Deployer(web3, {sources: fs.readFileSync('Hello.sol', 'utf8')}, 0);
 deployer.deploy('Hello', [param1, param2], { from: sender })
-  .then(hello => { // start using contract })
-  .catch(error => { // report error });
+  .then(hello => { /* start using contract */ })
+  .catch(error => { /* report error */ });
 ```
 
 As you can see, `deploy()` return a Promise, so you can chain multiple deploys using `Promise.then(...)`:
@@ -49,13 +49,12 @@ As you can see, `deploy()` return a Promise, so you can chain multiple deploys u
 const sources = {
     'A.sol': 'contract A {}',
     'B.sol': 'contract B { function B(A a) { ... } }'
-}
+};
 
-const deployer = new Deployer(web3, {sources: sources}, 0);
+const deployer = new Deployer(web3, {sources}, 0);
 deployer.deploy('A', [])
     .then(a => deployer.deploy('B', [a]))
-    .then(b => // start using b );
-;
+    .then(b => /* start using b */);
 ```
 
 ## contract-deployer caches the source code compilation:
@@ -65,6 +64,10 @@ deployer.deploy('A', [])
 ## contract-deployer "promisifies" deployed contract methods:
 
 // TODO
+
+## Installation
+
+    npm install contract-deployer
 
 ## API
 
@@ -84,7 +87,7 @@ A new Deployer instance
 
 ### Deploy a smart contract from a Solidity source file or a string containing the code:
 
-    deploy(contractName, constructorArgs, txOptions);
+    const promise = deployer.deploy(contractName, constructorArgs, txOptions);
 
 #### Arguments:
 
