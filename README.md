@@ -1,6 +1,6 @@
 # contract-deployer [![CircleCI](https://circleci.com/gh/BancoSabadell/contract-deployer.svg?style=shield)](https://circleci.com/gh/BancoSabadell/contract-deployer) [![npm version](https://img.shields.io/npm/v/contract-deployer.svg?style=flat)](https://www.npmjs.com/package/contract-deployer) 
 
-Code is worth a thousand words, so lets see an example code of the tipical contract deployment:
+Code is worth a thousand words, so lets see an example code of the tipical contract deployment and how contract-deployer can help you reduce boilerplate code:
 
 ```javascript
 const fs = require('fs');
@@ -32,7 +32,7 @@ const myContract = contractFactory.new(param1, param2, {
 });
 ```
 
-With contract-deployer&trade; it becomes:
+With _contract-deployer&trade;_ it becomes:
 
 ```javascript
 const Deployer = require('contract-deployer');
@@ -45,7 +45,7 @@ deployer.deploy('Hello', [param1, param2], { from: sender })
 
 As you can see, `deploy()` returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), so you can chain multiple deploys using [`Promise.then(...)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then):
 
-```
+```javascript
 const sources = {
     'A.sol': 'contract A {}',
     'B.sol': 'contract B { function B(A a) { ... } }'
