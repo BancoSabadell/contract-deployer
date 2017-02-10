@@ -43,7 +43,7 @@ deployer.deploy('Hello', [param1, param2], { from: sender })
   .catch(error => { /* report error */ });
 ```
 
-As you can see, `deploy()` return a Promise, so you can chain multiple deploys using `Promise.then(...)`:
+As you can see, `deploy()` returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), so you can chain multiple deploys using [`Promise.then(...)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then):
 
 ```
 const sources = {
@@ -59,11 +59,11 @@ deployer.deploy('A', [])
 
 ## contract-deployer caches the source code compilation:
 
-// TODO
+    // TODO
 
 ## contract-deployer "promisifies" deployed contract methods:
 
-// TODO
+    // TODO
 
 ## Installation
 
