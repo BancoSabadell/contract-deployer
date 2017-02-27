@@ -31,7 +31,7 @@ describe('Deployer', function () {
 
     it('should deploy contracts correctly', function () {
         const deployer = new Deployer(web3, {sources: testContracts}, 0);
-        return deployer.deploy('Foo', [], { from: account1 });
+        return deployer.deploy('Foo', ['Something'], { from: account1 });
     }).timeout(4000);
 
     it('should fail if contract name is not valid', function () {

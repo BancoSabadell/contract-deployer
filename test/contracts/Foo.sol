@@ -4,7 +4,7 @@ import "Bar.sol";
 
 contract Foo {
     Bar bar;
-    function Foo() {
+    function Foo(string something) {
         bar = new Bar();
     }
 
