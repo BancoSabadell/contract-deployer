@@ -31,8 +31,9 @@ class Deployer {
 
             const contractFactory = this.compilation.contracts[contractName];
             const contract = this.web3.eth.contract(JSON.parse(contractFactory.interface));
+            const contractData = contract.new.getData(...contractConstructorArguments, { data: contractFactory.bytecode });
 
-            this.web3.eth.estimateGas({ data: contractFactory.bytecode }, (error, estimatedGas) => {
+            this.web3.eth.estimateGas({ data: contractData }, (error, estimatedGas) => {
                 contract.new(...contractConstructorArguments,
                     Object.assign({ data: contractFactory.bytecode, gas: estimatedGas }, txOptions),
                     (error, deployedContract) => {
